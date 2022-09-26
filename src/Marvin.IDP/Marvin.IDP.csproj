@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6</TargetFramework>
+    <UserSecretsId>0960ff4e-f8da-4d93-92f7-a058242903d0</UserSecretsId>
   </PropertyGroup>
   
   <ItemGroup>
@@ -11,6 +12,7 @@
     <PackageReference Include="IdentityServer4" Version="4.1.2" />
     <PackageReference Include="IdentityServer4.EntityFramework" Version="4.1.2" />
     <PackageReference Include="IdentityServer4.Storage" Version="4.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="6.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using IdentityServer4;
 using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServerHost.Quickstart.UI;
@@ -27,6 +28,13 @@ var migrationsAssembly = typeof(Program)
 
 // uncomment, if you want to add an MVC-based UI
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication().AddFacebook(facebookOptions =>
+{
+    facebookOptions.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+    facebookOptions.AppId = builder.Configuration["Authentication:Facebook:AppId"]; //from secret manager
+    facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"]; //from secret manager
+});
 
 builder.Services.AddIdentityServer(options =>
     {
